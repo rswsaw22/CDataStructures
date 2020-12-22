@@ -35,7 +35,7 @@ struct vec_t *vectorDefault(size_t elemSize) {
 }
 
 void push_back(size_t element, struct vec_t *vector) {
-    vector->_array[*vector->indexLocation] = element;
+    vector->_array[vector->indexLocation] = element;
     vector->indexLocation++;
 }
 
