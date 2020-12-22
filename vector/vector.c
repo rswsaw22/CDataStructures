@@ -6,7 +6,7 @@
 struct vec_t {
     void *_array;
     unsigned int size;
-    size_t *indexLocation;
+    unsigned int indexLocation;
 };
 
 struct vec_t *vector(size_t elemSize, unsigned int size) {
@@ -18,7 +18,7 @@ struct vec_t *vector(size_t elemSize, unsigned int size) {
     struct vec_t *newVec = (struct vec_t*)malloc(1 * sizeof(struct vec_t));
     newVec->_array = arr;
     newVec->size = size;
-    newVec->indexLocation = &arr;
+    newVec->indexLocation = 0;
 
     return newVec;
 }
@@ -29,7 +29,7 @@ struct vec_t *vectorDefault(size_t elemSize) {
     struct vec_t *newVec = (struct vec_t*)malloc(1 * sizeof(struct vec_t));
     newVec->_array = arr;
     newVec->size = DEFAULT_SIZE;
-    newVec->indexLocation = &arr;
+    newVec->indexLocation = 0;
 
     return newVec;
 }
