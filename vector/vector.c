@@ -68,6 +68,24 @@ void *At(unsigned int index, struct vec_t *vector) {
     return (void *)element;
 }
 
+unsigned int Size(struct vec_t *vector) {
+    return vector->size;
+}
+
+void Swap(struct vec_t *vector1, struct vec_t *vector2) {
+    assert(vector1);
+    assert(vector2);
+    
+    size_t vecSize = sizeof(struct vec_t);
+
+    struct vec_t *tempStruct = (struct vec_t*)malloc(STRUCT_SIZE * vecSize);
+    memcpy(tempStruct, vector1, vecSize);
+    memcpy(vector1, vector2, vecSize);
+    memcpy(vector2, tempStruct, vecSize);
+
+    free(tempStruct);
+}
+
 void DestroyVector(struct vec_t *vector) {
     free(vector->_array);
     free((void *)vector);
