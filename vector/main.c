@@ -69,6 +69,7 @@ void testSwap(void) {
 
 int main(void) {
     testPushAndBack();
+    printf("\n");
     testSwap();
 
     return 0;
