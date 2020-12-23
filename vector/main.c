@@ -62,6 +62,9 @@ void testSwap(void) {
 
         printf("%d\t\t%d\n", elem1, elem2);
     }
+
+    DestroyVector(vec1);
+    DestroyVector(vec2);
 }
 
 int main(void) {
