@@ -65,7 +65,7 @@ void testSwap(void) {
 }
 
 int main(void) {
-    // testPushAndBack();
+    testPushAndBack();
     testSwap();
 
     return 0;
